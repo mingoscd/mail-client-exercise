@@ -1,0 +1,277 @@
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+  </head>
+  <body>
+    <div id="email">
+      <div id="header">
+        <div id="logo">
+          <img src="" alt="logo">
+        </div>
+        <div id="user-profile">
+          <img src="https://lh6.googleusercontent.com/-bL9JEjpgFd0/AAAAAAAAAAI/AAAAAAAAACg/RmQtt4DTnVs/s120-c/photo.jpg" alt="user-photo">
+        </div>
+        <div id="search-box">
+          <div class="input-group">
+            <input type="text" class="form-control" nama="search-mail" placeholder="Search emails">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar">
+        <div id="compose"></div>
+        <div id="labels">
+          <ul id="main-labels"> 
+            <span class="title">Main labels</span>
+            <li>Inbox</li>
+            <li>Starred</li>
+            <li>Sent mail</li>
+            <li>Drafts</li>
+            <li>Spam</li>
+          </ul>
+          <ul id="personal-labels">
+            <span class="title">Personal labels</span>
+            <li>Friends</li>
+            <li>Professional</li>
+            <li>Events</li>
+            <li>Things</li>
+          </ul>
+        </div>
+        <div id="chat">
+          <div id="chat-profile"></div>
+          <ul id="recent-conversations">
+            <span class="title">Chats</span>
+            <li>Charly Crews</li>
+            <li>Jack Gallagher</li>
+            <li>Richard Castle</li>
+            <li>Sheldon Cooper</li>
+          </ul>
+        </div>
+      </div>
+      <div id="main">
+
+        <ul id="email-actions" class="list-inline">
+          <li id="new-email" class="btn btn-default">Write new</li>
+          <li id="select-all" class="btn btn-default"><input type="checkbox" id="select-icon"> Select All</li>
+          <li id="check-emails" class="btn btn-default">Check Emails</li>
+          <li id="archive-emails" class="btn btn-default">Archive</li>
+          <li id="label-emails" class="btn btn-default">Add label</li>
+        </ul>
+
+        <ul id="emails">
+          <li data-id="1234">
+            <div class="checked" data-checked="false"></div>
+            <div class="starred" data-starred="true"></div>
+            <div class="from">Charlie Crews</div>
+            <div class="subject">I'm back</div>
+            <div class="preview">After been 12 years in prison...</div>
+            <div class="email-inputs">
+              <input type="checkbox" class="selected-email">
+              <img src="images/star4.png" class="star-image" alt="">
+              <input type="checkbox" class="star-email">
+            </div>
+          </li>
+          <li data-id="2345">
+            <div class="checked" data-checked="false"></div>
+            <div class="starred" data-starred="false"></div>
+            <div class="from">Jack Gallagher</div>
+            <div class="subject">The psiquiatric revolution</div>
+            <div class="preview">I want to change the way this hospital...</div>
+            <div class="email-inputs">
+              <input type="checkbox" class="selected-email">
+              <img src="images/star4.png" class="star-image" alt="">
+              <input type="checkbox" class="star-email">
+            </div>
+          </li>
+          <li data-id="3456">
+            <div class="checked" data-checked="false"></div>
+            <div class="starred" data-starred="true"></div>
+            <div class="from">Richard Castle</div>
+            <div class="subject">Niki Heat</div>
+            <div class="preview">The detective Niki Heat....</div>
+            <div class="email-inputs">
+              <input type="checkbox" class="selected-email">
+              <img src="images/star4.png" class="star-image" alt="">
+              <input type="checkbox" class="star-email">
+            </div>
+          </li>
+          <li data-id="4567">
+            <div class="checked" data-checked="false"></div>
+            <div class="starred" data-starred="false"></div>
+            <div class="from">Sheldon Cooper</div>
+            <div class="subject">I'm going to win the Noble price</div>
+            <div class="preview">Dear poor minds, probably you...</div>
+            <div class="email-inputs">
+              <input type="checkbox" class="selected-email">
+              <img src="images/star4.png" class="star-image" alt="">
+              <input type="checkbox" class="star-email">
+            </div>
+          </li>
+        </ul>
+
+        <div id="blank-email">
+          <div id="blank-close"></div>
+          <form id="new_email">
+            <div class="row">
+              <label class="col-sm-1" for="blank-to">To</label>
+              <input class="col-sm-10" id="blank-to" name="to" type="text" value="">
+            </div>
+            <div class="row">
+              <label class="col-sm-1" for="blank-from">From</label>
+              <input class="col-sm-10" id="blank-from" name="from" type="text" value="">
+            </div>
+            <div class="row">
+              <label class="col-sm-1" for="blank-subject">Subject</label>
+              <input class="col-sm-10" id="blank-subject" name="subject" type="text" value="">
+            </div>
+            <div class="row">
+              <label class="col-sm-1" for="blank-content">Message</label>
+              <textarea id="blank-content" class="col-sm-10" name="content" rows="4" cols="50"></textarea>
+            </div>
+            <div id="blank-bottom" class="col-sm-10 col-sm-push-1">
+              <input id="send" class="btn btn-success btn-lg" type="submit" value="Send">
+              <input id="trash" class="btn btn-danger btn-lg" type="submit" value="Discard">
+            </div>
+          </form>
+          <span id="email-result" class="title"></span>
+        </div>
+
+        <div id="expand-email">
+          <div class="row">
+            <span class="col-sm-1 email-labels">From:</span>
+            <span class="col-sm-9 email-data" id="expand-from"></span>
+          </div>
+          <div class="row">
+            <span class="col-sm-1 email-labels">Subject:</span>
+            <span class="col-sm-9 email-data" id="expand-subject"></span>
+          </div>
+          <div class="row">
+            <span class="col-sm-1 email-labels">Message:</span>
+            <span class="col-sm-9 email-data" id="expand-message"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+
+    <div id="footer">
+      <div id="usage">10GB 70% of 15GB</div>
+      <div id="brand">My Mail Company</div>
+      <div id="terms">Terms & privacy</div>
+      <div id="last-activity">Last account activity: 2 minutes ago</div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+      $( document ).ready(function() {
+        //write email button
+          $("#new-email").click(function(){
+            $("#emails").css('display','none');
+            $("#expand-email").css('display','none');
+            $("#blank-email").css('display','block');
+            $("#email-result").text("");
+          });
+        //check emails button
+          $("#check-emails").click(function(){
+            $("#emails").css('display','block');
+            $("#blank-email").css('display','none');
+            $("#expand-email").css('display','none');
+            //get new emails
+            var server = 'https://vast-earth-2490.herokuapp.com'
+            var query = '/email/new';
+            var url = server + query;
+            $.get(url,function(data){
+              $.each(data,function(i,e){
+                $("#emails").first().prepend('<li data-id="'+i+'"><div class="checked" data-checked="false"></div><div class="starred" data-starred="'+e.started+'"></div><div class="from">'+e.from+'</div><div class="subject">'+e.subject+'</div><div class="preview">'+e.preview+'</div><div class="email-inputs"><input type="checkbox" class="selected-email"><img src="images/star4.png" class="star-image" alt=""><input type="checkbox" class="star-email"></div></li>');
+              });
+            });
+            var url = server + '/labels';
+            $.get(url,function(data){
+              console.log(data);
+              $.each($("#personal-labels li"),function(i,e){ 
+                $.each(data,function(key,number){
+                  if(e.innerHTML == key.charAt(0).toUpperCase()+key.slice(1) && number.unread > 0){
+                    var text = e.innerHTML + '<span class="badge number">'+number.unread+'</span>';
+                    e.innerHTML = text;
+                  } 
+                });
+              });
+            });
+          });
+        //select all button
+          $("#select-all").click(function(e){
+            var cl = e.target.id == "select-all";
+            var state = cl? !$("#select-icon").is(':checked') : $("#select-icon").is(':checked');
+            $(".selected-email").prop('checked',state);
+            $("#select-icon").prop('checked',state);
+          });
+        //checkbox email button
+          $(".selected-email").click(function(e){
+            e.stopPropagation();
+          });
+        //star email checkbox
+          $(".star-image").click(function(e){
+            checked = $(this).next().prop('checked');
+            $(this).next().prop('checked',!checked);
+            !checked ? $(this).attr('src','images/star-lit4.png') : $(this).attr('src','images/star4.png');
+            e.stopPropagation();
+          });
+        //receive ajax emails
+          $("#emails li").click(function(e){
+            var server = 'https://vast-earth-2490.herokuapp.com'
+            var query = '/email/' + $(this).data('id');
+            var url = server + query;
+            $("#emails").css('display', 'none');
+            $("#expand-email").css('display', 'block');
+            $.get(url,function(data){
+             $("#expand-from").text(data.from);
+             $("#expand-subject").text(data.subject);
+             $("#expand-message").text(data.email);
+            });
+          });
+        //send email
+          $("#send").click(function(e){
+            e.preventDefault();
+            var server = 'https://vast-earth-2490.herokuapp.com'
+            var url = server + '/email';
+            var data = $("#new_email").serialize();
+            $.post(url, data, function(data){
+              $("#email-result").text(data);
+            });
+          });
+        //trash email
+          $("#trash").click(function(e){
+            e.preventDefault();
+            $("#blank-to").val("");
+            $("#blank-from").val("");
+            $("#blank-subject").val("");
+            $("#blank-content").val("");
+          });
+        //archive email
+          $("#archive-emails").click(function(){
+            $(".selected-email:checked").parent().parent().remove();
+          });
+        //filter by label
+          $("#personal-labels li").click(function(){
+            var filter = $(this).html().toLowerCase();
+            $("#emails li").remove();
+            var server = 'https://vast-earth-2490.herokuapp.com'
+            var query = '/labels/'+ filter;
+            var url = server + query;
+            $.get(url,function(data){
+              $.each(data,function(i,e){
+                $("#emails").first().prepend('<li data-id="'+i+'"><div class="checked" data-checked="false"></div><div class="starred" data-starred="'+e.started+'"></div><div class="from">'+e.from+'</div><div class="subject">'+e.subject+'</div><div class="preview">'+e.preview+'</div><div class="email-inputs"><input type="checkbox" class="selected-email"><img src="images/star4.png" class="star-image" alt=""><input type="checkbox" class="star-email"></div></li>');
+              });
+            });
+          });
+      });
+    </script>
+  </body>
+</html>
